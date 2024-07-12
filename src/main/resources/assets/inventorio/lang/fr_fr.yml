@@ -33,6 +33,11 @@ inventorio:
         Désactivé par défaut a cause du bouton "Utiliser avec la main secondaire".
         N'est pas mutuellement exclusif avec la touche pour "Utiliser avec la main secondaire".
 
+      disable_attack_swap: Désactiver l'échange d'attaque
+      disable_attack_swap.tooltip: |-
+        Ne changez pas d'arme dans la ceinture à outils lorsque vous attaquez. 
+        Permet également d'utiliser les outils de la ceinture à outils lors de la tenue d'une épée. 
+
       aggressive_button_removal: Forcer a retirer les boutons d'inventaire
       aggressive_button_removal.tooltip: |-
         Certains mods peuvent trouver un moyen d'ajouter leurs boutons

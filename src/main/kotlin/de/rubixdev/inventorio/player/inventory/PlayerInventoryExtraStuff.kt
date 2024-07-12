@@ -3,6 +3,7 @@ package de.rubixdev.inventorio.player.inventory
 import de.rubixdev.inventorio.mixin.client.accessor.MinecraftClientAccessor
 import de.rubixdev.inventorio.packet.InventorioNetworking
 import de.rubixdev.inventorio.util.getLevelOn
+import de.rubixdev.inventorio.config.PlayerSettings.disableAttackSwap
 import kotlin.math.max
 import net.minecraft.block.BlockState
 import net.minecraft.client.MinecraftClient
@@ -13,6 +14,7 @@ import net.minecraft.entity.projectile.FireworkRocketEntity
 import net.minecraft.item.FireworkRocketItem
 import net.minecraft.item.ItemStack
 import net.minecraft.item.Items
+import net.minecraft.item.SwordItem
 import net.minecraft.item.ToolItem
 
 //#if MC >= 12002
@@ -39,8 +41,8 @@ abstract class PlayerInventoryExtraStuff protected constructor(player: PlayerEnt
 
     private fun getMostPreferredTool(block: BlockState): ItemStack {
         // TODO: some mods will disagree with justifying the most preferred tool by just speed
-        // If a player tries to dig with a selected tool, respect that tool and don't change anything
-        if (getActualMainHandItem().item is ToolItem || findFittingToolBeltIndex(getActualMainHandItem()) != -1) {
+        // If a player tries to dig with a selected tool, respect that tool and don't change anything unless the player has disabled combat swap and the tool was a sword
+        if (!(getActualMainHandItem().item is SwordItem && disableAttackSwap.boolValue) && (getActualMainHandItem().item is ToolItem || findFittingToolBeltIndex(getActualMainHandItem()) != -1)) {
             return getActualMainHandItem()
         }
         // Try to find the fastest tool on the tool belt to mine this block
@@ -60,8 +62,8 @@ abstract class PlayerInventoryExtraStuff protected constructor(player: PlayerEnt
     }
 
     private fun playerAttackConditions(): Boolean {
-        // if a player tries to attack with a tool, respect that tool and don't change anything
-        if (getActualMainHandItem().item is ToolItem || findFittingToolBeltIndex(getActualMainHandItem()) != -1) {
+        // if a player tries to attack with a tool or combat swap has been disabled, don't change anything
+        if (disableAttackSwap.boolValue || getActualMainHandItem().item is ToolItem || findFittingToolBeltIndex(getActualMainHandItem()) != -1) {
             return false
         }
         // if the attack is done through a Pickarang (from Quark), do nothing

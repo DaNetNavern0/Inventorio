@@ -33,6 +33,11 @@ inventorio:
         Desabilitado por padrão por causa do botão "Usar utilidade".
         Não é multuamente exclusive com o atalho de teclado do "Usar utilidade".
 
+      disable_attack_swap: Desativar troca de ataque
+      disable_attack_swap.tooltip: |-
+        Não troque por armas no Cinto de Ferramentas ao atacar. 
+        Também permite que as ferramentas do Cinto de Ferramentas sejam usadas ao segurar uma espada. 
+
       aggressive_button_removal: Remoção agressiva do botão
       aggressive_button_removal.tooltip: |-
         Alguns mods conseguem chegar a modificar a tela do Inventorio.

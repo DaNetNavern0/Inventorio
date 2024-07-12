@@ -33,6 +33,11 @@ inventorio:
         Disabled by default due to "Use Utility" button.
         Not mutually exclusive with "Use Utility" keybinding.
 
+      disable_attack_swap: Disable Attack Swap
+      disable_attack_swap.tooltip: |-
+        Do not swap to weapons in the Tool Belt when attacking mobs.
+        Also allows tools in the Tool Belt to be used when holding a sword.  
+
       aggressive_button_removal: Aggressive Button Removal
       aggressive_button_removal.tooltip: |-
         Some mods may find their way to modify Inventorio Screen.

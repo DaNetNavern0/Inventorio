@@ -55,6 +55,14 @@ object PlayerSettings : AbstractSettings() {
     )
 
     @JvmField
+    val disableAttackSwap = SettingsEntryBoolean(
+        false,
+        "DisableAttackSwap",
+        "inventorio.settings.player.disable_attack_swap",
+        "inventorio.settings.player.disable_attack_swap.tooltip",
+    )
+
+    @JvmField
     val canThrowUnloyalTrident = SettingsEntryBoolean(
         false,
         "CanThrowUnloyalTrident",
@@ -109,6 +117,7 @@ object PlayerSettings : AbstractSettings() {
             canThrowUnloyalTrident,
             darkTheme,
             useItemAppliesToOffhand,
+            disableAttackSwap,
             skipEmptyUtilitySlots,
             swappedHands,
             aggressiveButtonRemoval,

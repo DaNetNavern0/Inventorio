@@ -34,6 +34,7 @@ object PlayerSettingsScreen {
         addEnumEntry(category, entryBuilder, PlayerSettings.scrollWheelUtilityBelt, requireRestart = false, blocked = false, ScrollWheelUtilityBeltMode::class.java, ScrollWheelUtilityBeltMode.OFF)
         addBoolEntry(category, entryBuilder, PlayerSettings.skipEmptyUtilitySlots, requireRestart = false, blocked = false)
         addBoolEntry(category, entryBuilder, PlayerSettings.useItemAppliesToOffhand, requireRestart = false, blocked = false)
+        addBoolEntry(category, entryBuilder, PlayerSettings.disableAttackSwap, requireRestart = false, blocked = false)
         addBoolEntry(category, entryBuilder, PlayerSettings.canThrowUnloyalTrident, requireRestart = false, blocked = false)
         addBoolEntry(category, entryBuilder, PlayerSettings.darkTheme, requireRestart = false, blocked = false)
         addBoolEntry(category, entryBuilder, PlayerSettings.aggressiveButtonRemoval, requireRestart = false, blocked = false)

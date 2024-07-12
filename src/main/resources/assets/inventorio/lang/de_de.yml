@@ -33,6 +33,11 @@ inventorio:
         Standardmäßig deaktiviert aufgrund der Tastenbindung "Utensilie verwenden".
         Nicht gegenseitig ausschließend mit der Tastenbindung "Utensilie verwenden".
 
+      disable_attack_swap: Attack Swap deaktivieren
+      disable_attack_swap.tooltip: |-
+        Wechsle beim Angriff nicht zu den Waffen im Werkzeuggürtel. 
+        Ermöglicht auch die Verwendung von Werkzeugen im Werkzeuggürtel beim Halten eines Schwertes. 
+
       aggressive_button_removal: Aggressive Schaltflächenentfernung
       aggressive_button_removal.tooltip: |-
         Einige Mods können einen Weg finden den Inventorio-Bildschirm zu modifizieren.
